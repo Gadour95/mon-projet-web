@@ -1,4 +1,4 @@
-const addition = require('./test');
+const addition = require('../test');  // Importe la fonction depuis test.js
 
 test('additionne 2 et 3 pour obtenir 5', () => {
     expect(addition(2, 3)).toBe(5);
