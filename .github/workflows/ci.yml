@@ -22,7 +22,7 @@ jobs:
           node-version: "16"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --production=false # Installe toutes les dépendances, y compris les devDependencies
 
       - name: Run tests
-        run: npx jest # Utilise npx pour exécuter Jest directement
+        run: npm test # Utilise le script défini dans package.json
