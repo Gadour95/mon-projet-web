@@ -30,3 +30,17 @@ jobs:
 
       - name: Run tests
         run: npx jest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1
+        with:
+          auth_token: nfp_Xqws8CsETExLHoqZ99Q8f97Dt5jZsSM71656
+          site_id: 7bce3501-dacb-41b5-bb32-d460a61f21d1
+          dir: ./
